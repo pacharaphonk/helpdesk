@@ -164,6 +164,13 @@ class Data_model extends CI_Model {
             return $query->result();
         }
 
+        public function by_case_loc($case_loc)
+        {
+            $this->db->where('case_loc',$case_loc);
+            $query = $this->db->get('tbl_case');
+            return $query->result();
+        }
+
         //query count by case_type
         public function countbycasetype()
         {
@@ -180,6 +187,15 @@ class Data_model extends CI_Model {
             $this->db->select('case_status, COUNT(id) as statustotal');
             $this->db->group_by('case_status');
             $this->db->order_by('statustotal','desc');
+            $query = $this->db->get('tbl_case');
+            return $query->result();
+        }
+
+        public function countbycaseloc()
+        {
+            $this->db->select('case_loc, COUNT(id) as loctotal');
+            $this->db->group_by('case_loc');
+            $this->db->order_by('loctotal','desc');
             $query = $this->db->get('tbl_case');
             return $query->result();
         }

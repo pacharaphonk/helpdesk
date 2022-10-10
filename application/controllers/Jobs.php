@@ -102,4 +102,26 @@ class Jobs extends CI_Controller {
 		$this->load->view('backend/case_type_list',$data);
 		$this->load->view('template/footer');
 	}
+
+	public function bycaseloc()
+	{
+
+		//ประกาศตัวแปรรับค่า get
+		$case_loc = $this->input->get('case_loc');
+
+		//echo $case_type;
+
+
+		$data['query']=$this->data_model->by_case_loc($case_loc);
+		
+
+		/* echo '<pre>';
+		print_r($data);
+		echo '</pre>';
+		exit; */
+
+		$this->load->view('template/header');
+		$this->load->view('backend/case_loc_list',$data);
+		$this->load->view('template/footer');
+	}
 }
