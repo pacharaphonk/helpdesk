@@ -53,11 +53,11 @@
                             google.charts.setOnLoadCallback(drawChart);
                             function drawChart() {
                             var data = google.visualization.arrayToDataTable([
-                            ['Task', 'จำนวนงานแยกตามอุปกรณ์'],
+                            ['Task', 'จำนวนงานแยกตามประเภทงาน'],
                             <?php echo $case_type;?>
                             ]);
                             var options = {
-                            title: 'จำนวนงานแยกตามอุปกรณ์'
+                            title: 'จำนวนงานแยกตามประเภทงาน'
                             };
                             var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
                             chart.draw(data, options);
@@ -66,12 +66,12 @@
                             
                             <div id="piechart1" style="width: 680px; height: 480px;"></div>
                             
-                            <h3>::จำนวนงานแยกตามอุปกรณ์::</h3>
+                            <h4>::จำนวนงานแยกตามประเภทงานซ่อม::</h4>
                             <table class="table table-bordered table-striped" role="grid" aria-describedby="example1_info">
                                 <thead>
                                     <tr role="row" class="info">
                                         <th  tabindex="0" rowspan="1" colspan="1" style="width: 5%;">#</th>
-                                        <th  tabindex="0" rowspan="1" colspan="1" style="width: 75%;">ประเภทงานซ่อม</th>
+                                        <th  tabindex="0" rowspan="1" colspan="1" style="width: 75%;">ประเภทงาน</th>
                                         <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">จำนวน</th>
                                         <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">view</th>
                                     </tr>
@@ -152,12 +152,12 @@
                             
                             <div id="piechart2" style="width: 680px; height: 480px;"></div>
                         
-                            <h3>::จำนวนงานแยกตามสถานะ::</h3>
+                            <h4>::จำนวนงานแยกตามสถานะ::</h4>
                             <table class="table table-bordered table-striped" role="grid" aria-describedby="example1_info">
                                 <thead>
                                     <tr role="row" class="danger">
                                         <th  tabindex="0" rowspan="1" colspan="1" style="width: 5%;">#</th>
-                                        <th  tabindex="0" rowspan="1" colspan="1" style="width: 75%;">ประเภทงานซ่อม</th>
+                                        <th  tabindex="0" rowspan="1" colspan="1" style="width: 75%;">สถานะ</th>
                                         <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">จำนวน</th>
                                         <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">view</th>
                                     </tr>
@@ -339,7 +339,7 @@
                             
                             <div id="piechart3" style="width: 680px; height: 480px;"></div>
                             
-                            <h3>::จำนวนงานแยกตามห้อง::</h3>
+                            <h4>::จำนวนงานแยกตามห้อง::</h4>
                             <table class="table table-bordered table-striped" role="grid" aria-describedby="example1_info">
                                 <thead>
                                     <tr role="row" class="info">
@@ -472,6 +472,39 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        <div class="col-sm-6">
+                            <?php
+                            $date_save = array();
+                            //chart data format
+                            foreach ($querydate as $l) {
+
+                                $date_save[] = "['".$l->date_save."'".", ".$l->datetotal."]";
+                            }
+                            //cut last commar
+                            $date_save = implode(",", $date_save);
+                            ?>
+                            <script type="text/javascript">
+                            google.charts.load('current', {'packages':['corechart']});
+                            google.charts.setOnLoadCallback(drawChart);
+                            function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                            ['Task', 'ช่วงเวลาที่มีการแจ้งงานซ่อม'],
+                            <?php echo $date_save;?>
+                            ]);
+                            var options = {
+                            title: 'จำนวนงานแยกตามช่วงเวลา'
+                            };
+                            var chart = new google.visualization.BarChart(document.getElementById('piechart4'));
+                            chart.draw(data, options);
+                            }
+                            </script>
+                            
+                            <div id="piechart4" style="width: 600px; height: 400px;"></div>
+                            
+                            
+                        </div>
+
                     </div>
                 </div>
                 </div><!-- /.box-body -->

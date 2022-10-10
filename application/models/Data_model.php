@@ -200,4 +200,13 @@ class Data_model extends CI_Model {
             return $query->result();
         }
 
+        public function countbydatesave()
+        {
+            $this->db->select('date_save, COUNT(id) as datetotal');
+            $this->db->group_by('date_save');
+            $this->db->order_by('datetotal','desc');
+            $query = $this->db->get('tbl_case');
+            return $query->result();
+        }
+
 }

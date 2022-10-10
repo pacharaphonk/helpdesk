@@ -18,6 +18,7 @@ class Report extends CI_Controller {
 		$data['queryreport']=$this->data_model->countbycasetype();
 		$data['querystatus']=$this->data_model->countbycasestatus();
 		$data['queryloc']=$this->data_model->countbycaseloc();
+		$data['querydate']=$this->data_model->countbydatesave();
 		$this->load->view('template/header');
 		$this->load->view('backend/report_view',$data);
 		$this->load->view('template/footer');
