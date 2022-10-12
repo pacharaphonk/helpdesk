@@ -200,13 +200,46 @@ class Data_model extends CI_Model {
             return $query->result();
         }
 
-        public function countbydatesave()
+        public function count_case_date()
         {
-            $this->db->select('date_save, COUNT(id) as datetotal');
-            $this->db->group_by('date_save');
-            $this->db->order_by('datetotal','desc');
-            $query = $this->db->get('tbl_case');
-            return $query->result();
+            $this->db->select('DATE_FORMAT(d.date_save,"%d-%m-%Y") as datesave, COUNT(id) as dtotal');
+            $this->db->from('tbl_case as d');
+            $this->db->group_by('DATE_FORMAT(d.date_save,"%d%")');
+            $query = $this->db->get('');
+            return $query->result();    
         }
 
+        public function count_case_m()
+        {
+            $this->db->select('DATE_FORMAT(d.date_save,"%M-%Y") as datesavem, COUNT(id) as dtotal');
+            $this->db->from('tbl_case as d');
+            $this->db->group_by('DATE_FORMAT(d.date_save,"%m%")');
+            $query = $this->db->get('');
+            return $query->result();    
+        }
+
+        public function count_case_y()
+        {
+            $this->db->select('DATE_FORMAT(d.date_save,"%Y") as datesavey, COUNT(id) as dtotal');
+            $this->db->from('tbl_case as d');
+            $this->db->group_by('DATE_FORMAT(d.date_save,"%Y%")');
+            $query = $this->db->get('');
+            return $query->result();    
+        }
+
+        public function count_case_form()
+        {
+            $ds = $this->input->post('ds');
+            $de = $this->input->post('de');
+            /* echo $ds .' x '.$de;
+            exit; */
+            $de = $de .' 23:59:59';
+            
+                $this->db->select('*');
+                $this->db->from('tbl_case');
+                $this->db->where('date_save >=',$ds);
+                $this->db->where('date_save <=',$de);
+                $query = $this->db->get();
+                return $query->result();    
+        }
 }

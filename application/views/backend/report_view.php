@@ -332,7 +332,7 @@
                             var options = {
                             title: 'จำนวนงานแยกตามห้อง'
                             };
-                            var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+                            var chart = new google.visualization.ColumnChart(document.getElementById('piechart3'));
                             chart.draw(data, options);
                             }
                             </script>
@@ -472,39 +472,6 @@
                                 </tbody>
                             </table>
                         </div>
-
-                        <div class="col-sm-6">
-                            <?php
-                            $date_save = array();
-                            //chart data format
-                            foreach ($querydate as $l) {
-
-                                $date_save[] = "['".$l->date_save."'".", ".$l->datetotal."]";
-                            }
-                            //cut last commar
-                            $date_save = implode(",", $date_save);
-                            ?>
-                            <script type="text/javascript">
-                            google.charts.load('current', {'packages':['corechart']});
-                            google.charts.setOnLoadCallback(drawChart);
-                            function drawChart() {
-                            var data = google.visualization.arrayToDataTable([
-                            ['Task', 'ช่วงเวลาที่มีการแจ้งงานซ่อม'],
-                            <?php echo $date_save;?>
-                            ]);
-                            var options = {
-                            title: 'จำนวนงานแยกตามช่วงเวลา'
-                            };
-                            var chart = new google.visualization.BarChart(document.getElementById('piechart4'));
-                            chart.draw(data, options);
-                            }
-                            </script>
-                            
-                            <div id="piechart4" style="width: 600px; height: 400px;"></div>
-                            
-                            
-                        </div>
-
                     </div>
                 </div>
                 </div><!-- /.box-body -->
