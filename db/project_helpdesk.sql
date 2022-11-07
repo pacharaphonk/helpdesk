@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2022 at 09:09 PM
+-- Generation Time: Oct 26, 2022 at 07:37 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -72,10 +72,7 @@ CREATE TABLE `tbl_case` (
 --
 
 INSERT INTO `tbl_case` (`id`, `case_type`, `case_detail`, `case_loc`, `p_status`, `p_name`, `p_email`, `p_img`, `case_status`, `date_save`, `tech_id`, `tech_name`, `case_update`, `case_update_log`) VALUES
-(11, 1, 'จอแตก', 14, 2, 'พชรพล กักขุนทศ', 'pacharaphonk62@nu.ac.th', '2191d510502265d0c89300e9aec84612.jpg', 3, '2022-10-08 18:49:56', 1, 'Mr.Admin', '2022-10-09 03:46:15', 'แก้ไขแล้วเสร็จ'),
 (12, 2, 'กดไม่ติด', 5, 1, 'กรรชัย สอนเมือง', 'kanchai@gmail.com', 'ab69bed9a85a7acdde585973ff6c4989.jpg', 1, '2022-10-08 20:31:32', 0, '', NULL, NULL),
-(13, 3, 'ไม่ขยับ', 1, 1, 'กรรชัย สอนเมือง', 'kanchai@gmail.com', '83698b7e219427f24a5ff433ce818ea5.jpg', 4, '2022-10-08 20:32:08', 1, 'Mr.Admin', '2022-10-09 03:45:57', 'ขยับสายใช้ได้'),
-(14, 4, 'เปืดไม่ติด', 11, 2, 'พชรพล กักขุนทศ', 'pacharaphonk62@nu.ac.th', '873af7e92ea601987440f919ba5852af.jpg', 2, '2022-10-08 20:32:59', 1, 'Mr.Admin', '2022-10-09 03:45:33', 'กำลังแก้ไข'),
 (15, 5, 'หมึกไม่ออก', 7, 1, 'กรรชัย สอนเมือง', 'kanchai@gmail.com', 'a3227105c940e918264501e76a1c102d.jpg', 4, '2022-10-08 20:33:25', 1, 'Mr.Admin', '2022-10-09 03:45:13', 'หมึกออกปกติ'),
 (16, 6, 'หักวางของไม่ได้', 15, 2, 'พชรพล กักขุนทศ', 'pacharaphonk62@nu.ac.th', 'e1435c998f0730412f6e91e160d9480c.jpg', 2, '2022-10-08 20:34:22', 1, 'Mr.Admin', '2022-10-09 03:44:51', 'กำลังแก้ไข'),
 (17, 7, 'ขาหัก', 16, 2, 'พชรพล กักขุนทศ', 'pacharaphonk62@nu.ac.th', 'cfdf1269bf6b9b2a96c5cadeeb1cb8c5.jpg', 2, '2022-10-08 20:34:51', 1, 'Mr.Admin', '2022-10-09 03:44:43', 'กำลังแก้ไข'),
@@ -84,11 +81,15 @@ INSERT INTO `tbl_case` (`id`, `case_type`, `case_detail`, `case_loc`, `p_status`
 (20, 10, 'แอร์ไม่มีความเย็น', 38, 2, 'พชรพล กักขุนทศ', 'pacharaphonk62@nu.ac.th', 'b733e9c90a4495366cc458dac70ec2ab.jpg', 2, '2022-10-08 20:37:21', 1, 'Mr.Admin', '2022-10-09 03:43:52', 'กำลังแก้ไข'),
 (21, 4, 'เปิดไม่ติด', 19, 2, 'พชรพล กักขุนทศ', 'pacharaphonk62@nu.ac.th', 'a5c1282eac020d0c793107fa7571e2f7.jpg', 1, '2022-10-08 20:57:13', 0, '', NULL, NULL),
 (22, 4, 'เปิดไม่ได้', 17, 2, 'พชรพล กักขุนทศ', 'pacharaphonk62@nu.ac.th', '25376f10078c392d69fddde7b024634c.jpg', 1, '2022-10-08 20:57:53', 0, '', NULL, NULL),
-(23, 3, 'เสียใช้ไม่ได้', 6, 1, 'กรรชัย สอนเมือง', 'kanchai@gmail.com', '1badfad373e30ca208d9141edea40000.jpg', 1, '2022-10-08 20:58:21', 0, '', NULL, NULL),
+(23, 3, 'เสียใช้ไม่ได้', 6, 1, 'กรรชัย สอนเมือง', 'kanchai@gmail.com', '1badfad373e30ca208d9141edea40000.jpg', 2, '2022-10-08 20:58:21', 3, 'Mr .A', '2022-10-10 20:54:09', 'กำลังดำแก้ไข'),
 (24, 1, 'จอแตก', 15, 1, 'กรรชัย สอนเมือง', 'kanchai@gmail.com', 'bef0561bea4c729aad2098cfad165655.jpg', 2, '2022-10-08 20:58:48', 3, 'Mr .A', '2022-10-10 01:31:58', 'กำลังแก้ไข'),
 (25, 3, 'ไม่ขยับ ค้าง', 14, 1, 'กรรชัย สอนเมือง', 'pakornc@nu.ac.th', '28dd0e714da2ad33f97f821f117ee360.jpg', 1, '2022-10-09 18:34:49', 0, '', NULL, NULL),
 (26, 8, 'ภาพเบลอ', 11, 1, 'กรรชัย สอนเมือง', 'kanchai@gmail.com', '843e8cf485e557be051dc6c3ba6c08cb.jpg', 1, '2022-10-09 18:37:03', 0, '', NULL, NULL),
-(27, 7, 'ขาหังหนึ่งข้าง', 9, 1, 'กรรชัย สอนเมือง', 'kanchai@gmail.com', 'e18601322e6ab670b29f69370aeac2ab.jpg', 1, '2022-10-09 18:38:43', 0, '', NULL, NULL);
+(27, 7, 'ขาหังหนึ่งข้าง', 9, 1, 'กรรชัย สอนเมือง', 'kanchai@gmail.com', 'e18601322e6ab670b29f69370aeac2ab.jpg', 1, '2022-10-09 18:38:43', 0, '', NULL, NULL),
+(28, 6, 'หักใช้งานไม่ได้', 15, 1, 'กรรชัย สอนเมือง', 'kanchai@gmail.com', '275f3fc77095d2dc9867155d5f22d451.jpg', 1, '2022-10-10 13:49:36', 0, '', NULL, NULL),
+(29, 1, 'จอแตก', 38, 2, 'พชรพล กักขุนทศ', 'pacharaphonk62@nu.ac.th', 'bf6e2078416d94d0b15fe47899e69cc4.jpg', 4, '2022-10-10 13:52:48', 3, 'Mr .A', '2022-10-10 21:04:56', 'เป็นลอยที่จอ เช็ดแล้วหาย'),
+(30, 9, 'หลอดไฟแตก', 40, 2, 'พชรพล กักขุนทศ', 'pacharaphonk62@nu.ac.th', '2ca8c137e874ad6946b7740cefea7299.jpg', 3, '2022-10-10 16:57:00', 3, 'Mr .A', '2022-10-10 23:57:42', 'แก้ไขแล้ว'),
+(31, 10, 'แอร์ไม่เย็น', 3, 2, 'พชรพล กักขุนทศ', 'pacharaphonk62@nu.ac.th', '487d4eff5a64f1bc546b4390061db3fa.jpg', 3, '2022-10-25 09:47:17', 3, 'Mr .A', '2022-10-27 00:20:30', 'ดำเนินการเปลี่ยนน้ำยาแอร์เรียบร้อย');
 
 -- --------------------------------------------------------
 
@@ -258,7 +259,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_case`
 --
 ALTER TABLE `tbl_case`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tbl_case_loc`

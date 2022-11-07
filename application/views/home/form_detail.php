@@ -34,7 +34,7 @@
                                             <div class="col-sm-3 control-label">
                                                 สถานะ
                                             </div>
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-4">
                                               <?php
                                                 $st = $rs_detail->case_status;
                                                 if($st==1){
@@ -53,6 +53,15 @@
                                             </div>
                                         </div>
                                         
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                รายละเอียดการอัพเดทงานซ่อม
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <textarea  class="form-control" disabled><?= $rs_detail->case_update_log;?></textarea>
+                                            </div>
+                                        </div>
+
                                         <div class="form-group">
                                             <div class="col-sm-3 control-label">
                                                 ประเภทการแจ้ง
@@ -248,18 +257,31 @@
                                         
                                         
                                         </div> <!-- sm-6 -->
-                                        <div class="col-sm-6">
+                                    <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="col-sm-3 control-label">
                                                 ภาพประกอบ
                                             </div>
                                             <div class="col-sm-5">
-                                                <img src="<?= base_url('./asset/uploads/'.$rs_detail->p_img); ?>" width="100%">
-                                                <br>
-                                                ว/ด/ป : <?= $rs_detail->date_save;?>
+                                                <img src="<?= base_url('./asset/uploads/'.$rs_detail->p_img); ?>" width="100%"> 
+                                            </div>
+                                    </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                วันเวลาที่แจ้งซ่อม
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="text"  class="form-control" disabled  value="<?= $rs_detail->date_save;?>">
                                             </div>
                                         </div>
-                  
+                                        <div class="form-group">
+                                            <div class="col-sm-3 control-label">
+                                                วันเวลาดำเนินการ
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <input type="text"  class="form-control" disabled  value="<?= $rs_detail->case_update;?>">
+                                            </div>
+                                        </div>
                                         
                                             <div class="form-group">
                                                 <div class="col-sm-12">

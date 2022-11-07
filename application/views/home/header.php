@@ -20,6 +20,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <?php echo link_tag('asset/dist/css/skins/_all-skins.min.css'); ?>
+  
 <!-- AdminLTE App -->
     <script src="<?php echo base_url(); ?>asset/dist/js/app.min.js" type="text/javascript">
     </script>
@@ -27,7 +28,7 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
+        
         <!-- ckeditor-->
     <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -35,7 +36,11 @@
     .fr{color: red;}
 
     .bt{margin-left: ;}
-
+    .responsive {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+    } 
     </style>
 
     
@@ -95,6 +100,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
           <li><a href="<?= site_url('');?>"><i class="fa fa-home"></i> <span>HOME</span></a></li>
+          <li><a href="<?= site_url('form');?>"><i class="fa fa-home"></i> <span>แจ้งงานซ่อม</span></a></li>
           <li><a href="<?= site_url('form/allcase');?>"><i class="fa fa-desktop"></i> <span>ติดตามงาน</span></a></li>
           <li><a href="<?= site_url('login');?>"><i class="fa fa-edit"></i> <span>Login</span></a></li>
       </ul>
